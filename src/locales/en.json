@@ -75,6 +75,54 @@
   "verification_root":"More than one root element",
   "verification_dead":"Dead elements",
   "verification_false":"False optional elements",
-  "verification_path_problem":"Please setup BackEnd parameters first"
+  "verification_path_problem":"Please setup BackEnd parameters first",
+
+  "requirex_application": "Application",
+  "requirex_domain": "Domain",
+  "requirex_adaptation":"Adaptation",
+
+  "requirex_requirement_yes":"Yes",
+  "requirex_requirement_no" : "No",
+  "requirex_requirement_description" : "Description",
+
+  "requirex_select":"select an option",
+  "requirex_requirement_type_label" : "Requirement Type",
+  "requirex_requirement_type1": "Constraint",  
+  "requirex_requirement_type2": "Functional Requirements",  
+  "requirex_requirement_type3": "Quality Requirement",
+  "requirex_requirement_type_value_1": "constraint",  
+  "requirex_requirement_type_value_2": "functionalRequirements",  
+  "requirex_requirement_type_value_3": "qualityRequirement",
+
+  "requirex_requirement_name_label": "Requirement Name", 
+
+  "requirex_requirement_condition_label": "Requirement have a conditional?",
+  "requirex_requirement_condition_descrive_label": "Plase enter a condition.",
+
+  "requirex_requirement_imperative_label" : "Imperative",
+  "requirex_requirement_imperative1": "Must",  
+  "requirex_requirement_imperative2": "Should",   
+  "requirex_requirement_imperative3": "Could",
+  "requirex_requirement_imperative_value_1": "must",  
+  "requirex_requirement_imperative_value_2": "should",  
+  "requirex_requirement_imperative_value_3": "could",
+
+  "requirex_requirement_system_activity_label" : "System Activity",
+  "requirex_requirement_system_activity1": "User Interface",  
+  "requirex_requirement_system_activity2": "Autonomous Activity",   
+  "requirex_requirement_system_activity3": "External Interface",
+  "requirex_requirement_system_activity_value_1": "userInt",  
+  "requirex_requirement_system_activity_value_2": "autoAct",  
+  "requirex_requirement_system_activity_value_3": "extInt",
+
+  "requirex_requirement_user_label":"User",  
+  "requirex_requirement_process_verb_label":"Process Verb",
+  "requirex_requirement_object_label":"Objet (Noun)"
+  
+
+  
+
+  
+  
 
 }
