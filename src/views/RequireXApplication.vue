@@ -259,13 +259,13 @@ export default {
             this.requirement.imperative;
 
           //Validate system activity
-          if (this.requirement.systemActivity == "userInt") {
+          if (this.requirement.systemActivity == "autoAct") {
             this.msg +=
               " " +
               this.requirement.processVerb +
               " " +
               this.requirement.object;
-          } else if (this.requirement.systemActivity == "autoAct") {
+          } else if (this.requirement.systemActivity == "userInt") {
             this.msg +=
               " provide the " + this.requirement.user + " the capacity of";
             this.msg +=
