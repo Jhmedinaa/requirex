@@ -81,6 +81,10 @@
   "requirex_domain": "Domain",
   "requirex_adaptation":"Adaptation",
 
+  "requirex_application_tittle": "Application requirement",
+  "requirex_domain_tittle": "Domain requirement",
+  "requirex_adaptation_tittle":"Adaptation requirement",
+
   "requirex_requirement_yes":"Yes",
   "requirex_requirement_no" : "No",
   "requirex_requirement_description" : "Description",
@@ -107,17 +111,38 @@
   "requirex_requirement_imperative_value_2": "should",  
   "requirex_requirement_imperative_value_3": "could",
 
+  "requirex_requirement_system_name_label":"System or SubSystem",
+  "requirex_requirement_system_domain_name_label":"System family lines",
+
   "requirex_requirement_system_activity_label" : "System Activity",
-  "requirex_requirement_system_activity1": "User Interface",  
+  "requirex_requirement_system_activity1": "User Interaction",  
   "requirex_requirement_system_activity2": "Autonomous Activity",   
   "requirex_requirement_system_activity3": "External Interface",
+  "requirex_requirement_system_domain_activity_label" : "Productline Activity",
+  "requirex_requirement_system_domain_activity1": "User",  
+  "requirex_requirement_system_domain_activity2": "Autonomous Activity",   
+  "requirex_requirement_system_domain_activity3": "External Interface",
   "requirex_requirement_system_activity_value_1": "userInt",  
   "requirex_requirement_system_activity_value_2": "autoAct",  
   "requirex_requirement_system_activity_value_3": "extInt",
 
-  "requirex_requirement_user_label":"User",  
+  "requirex_requirement_user_label":"User",
+  "requirex_requirement_user_domain_label":"Domain User",  
   "requirex_requirement_process_verb_label":"Process Verb",
-  "requirex_requirement_object_label":"Objet (Noun)"
+  "requirex_requirement_object_domain_label":"Domain Objet",
+  "requirex_requirement_object_label":"Objet",
+
+  "requirex_requirement_system_condition_label": "Object have a conditional?",
+  "requirex_requirement_system_condition_domain_label": "Domain Object have a conditional?",
+  "requirex_requirement_system_condition_descrive_label": "Plase enter a condition of the type 'if and only if'",
+
+  "requirex_requirement_system_label":"External System or Device",
+
+  "requirex_requirement_from_label" : "Interface requirement interaction",
+  "requirex_requirement_from1": "From",  
+  "requirex_requirement_from2": "To",   
+  "requirex_requirement_from_value_1": "from",  
+  "requirex_requirement_from_value_2": "to"
   
 
   
