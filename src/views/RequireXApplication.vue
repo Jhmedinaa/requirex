@@ -145,8 +145,9 @@
     </i-form>
     <!-- Modal del mensaje-->
     <modal v-model="dialog" title="RequireX" @on-ok="ok" @on-cancel="cancel">
-      <p>{{require}}</p>
+      <p>{{msg}}</p>
     </modal>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
  
@@ -157,6 +158,7 @@ export default {
   data() {
     return {
       //Modelo que se usa para controlar el requerimiento
+      msg: "",
       requirement: {
         reqType: "",
         name: "",
@@ -216,8 +218,7 @@ export default {
       userInt: false,
       autoAct: false,
       extInt: false,
-      dialog: false,
-      require: ""
+      dialog: false
     };
   },
   methods: {
@@ -248,10 +249,10 @@ export default {
           this.$Message.success("Success!");
           //Si hay una condición
           if (this.requirement.condition) {
-            this.require += this.requirement.conditionDescription + " ";
+            this.msg += this.requirement.conditionDescription + " ";
           }
 
-          this.require =
+          this.msg =
             "The " +
             this.requirement.systemName +
             " " +
@@ -259,21 +260,21 @@ export default {
 
           //Validate system activity
           if (this.requirement.systemActivity == "userInt") {
-            this.require +=
+            this.msg +=
               " " +
               this.requirement.processVerb +
               " " +
               this.requirement.object;
-          } else if (this.requirement.systemActivity == "userInt") {
-            this.require +=
-              " provide the " + this.requirement.user + " the capacity ";
-            this.require +=
+          } else if (this.requirement.systemActivity == "autoAct") {
+            this.msg +=
+              " provide the " + this.requirement.user + " the capacity of";
+            this.msg +=
               " " +
               this.requirement.processVerb +
               " " +
               this.requirement.object;
-          } else {
-            this.require +=
+          } else if(this.requirement.systemActivity == "extInt") {
+            this.msg +=
               " have the capacity of " +
               this.requirement.processVerb +
               " " +
@@ -286,9 +287,9 @@ export default {
 
           //Validat conditions
           if (this.requirement.systemConditionDescriptionState) {
-            this.require += ", " + this.requirement.systemConditionDescription;
+            this.msg += ", " + this.requirement.systemConditionDescription;
           }
-this.$Message.success(this.require);
+          this.$Message.success(this.require);
           this.dialog = true;
         } else {
           this.$Message.error("Fail!");
