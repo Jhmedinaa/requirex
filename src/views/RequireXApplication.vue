@@ -147,7 +147,6 @@
     <modal v-model="dialog" title="RequireX" @on-ok="ok" @on-cancel="cancel">
       <p>{{msg}}</p>
     </modal>
-    <h1>{{ msg }}</h1>
   </div>
 </template>
  
