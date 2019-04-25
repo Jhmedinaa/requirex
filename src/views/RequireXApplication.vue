@@ -249,8 +249,11 @@ export default {
       }
     },
     handleSubmit(name) {
+      //Validar el formulario
       this.$refs[name].validate(valid => {
         if (valid) {
+          //Reiniciar requerimiento
+           this.msg = "";
           //this.$Message.success("Success!");
           //Si hay una condición
           if (this.requirement.condition) {

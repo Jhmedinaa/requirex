@@ -250,8 +250,11 @@ export default {
       }
     },
     handleSubmit(name) {
+      //Validar el formulario
       this.$refs[name].validate(valid => {
         if (valid) {
+          //Reiniciar requerimiento
+          this.msg = "";
           //Si hay una condición
           if (this.requirement.condition == true) {
             this.msg += this.requirement.conditionDescription + " ";
@@ -278,7 +281,7 @@ export default {
               this.requirement.processVerb +
               " " +
               this.requirement.object;
-          } else if(this.requirement.systemActivity == "extInt"){
+          } else if (this.requirement.systemActivity == "extInt") {
             this.msg +=
               " have the capacity of " +
               this.requirement.processVerb +
@@ -306,7 +309,7 @@ export default {
       this.$refs[name].resetFields();
     },
     ok() {
-        this.dialog = false;
+      this.dialog = false;
       // this.$Message.info("Clicked ok");
     },
     cancel() {
