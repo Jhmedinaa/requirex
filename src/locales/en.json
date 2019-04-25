@@ -48,6 +48,7 @@
   "modal_success":"Success",
   "modal_error":"Error",
   "modal_close":"Close",
+  "modal_ok":"Ok",
   "models_save_model":"Model Saved!",
   "models_actions_derivation_response": "Derivation response",
 

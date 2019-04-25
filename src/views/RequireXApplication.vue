@@ -144,8 +144,14 @@
       </form-item>
     </i-form>
     <!-- Modal del mensaje-->
-    <modal v-model="dialog" title="RequireX" @on-ok="ok" @on-cancel="cancel">
+    <modal v-model="dialog" title="RequireX" @on-ok="ok" ok-text="ok">
+      <h1 slot="header" >
+        <span>{{$t("app_requirex")}} - {{$t('requirex_application')}}</span>
+      </h1>
       <p>{{msg}}</p>
+      <div slot="footer">
+        <Button type="info" size="small"  @click="ok">{{$t("modal_ok")}}</Button>
+      </div>
     </modal>
   </div>
 </template>
@@ -272,7 +278,7 @@ export default {
               this.requirement.processVerb +
               " " +
               this.requirement.object;
-          } else if(this.requirement.systemActivity == "extInt") {
+          } else if (this.requirement.systemActivity == "extInt") {
             this.msg +=
               " have the capacity of " +
               this.requirement.processVerb +
@@ -288,7 +294,7 @@ export default {
           if (this.requirement.systemConditionDescriptionState) {
             this.msg += ", " + this.requirement.systemConditionDescription;
           }
-          this.$Message.success(this.require);
+          //this.$Message.success(this.require);
           this.dialog = true;
         } else {
           this.$Message.error("Fail!");
@@ -300,6 +306,7 @@ export default {
       this.$refs[name].resetFields();
     },
     ok() {
+      this.dialog = false;
       // this.$Message.info("Clicked ok");
     },
     cancel() {
