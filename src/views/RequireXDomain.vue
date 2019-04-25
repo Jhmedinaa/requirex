@@ -184,7 +184,7 @@ export default {
       },
       //Realizar validaciones del formulario
       ruleValidate: {
-        reqType: [
+        msg: [
           {
             required: true,
             message: "Please select the requirement type",
@@ -252,13 +252,12 @@ export default {
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$Message.success("Success!");
           //Si hay una condición
-          if (this.requirement.condition) {
-            this.require += this.requirement.conditionDescription + " ";
+          if (this.requirement.condition == true) {
+            this.msg += this.requirement.conditionDescription + " ";
           }
 
-          this.require =
+          this.msg +=
             "The " +
             this.requirement.systemName +
             " " +
@@ -266,21 +265,21 @@ export default {
 
           //Validate system activity
           if (this.requirement.systemActivity == "autoAct") {
-            this.require +=
+            this.msg +=
               " " +
               this.requirement.processVerb +
               " " +
               this.requirement.object;
           } else if (this.requirement.systemActivity == "userInt") {
-            this.require +=
+            this.msg +=
               " provide the " + this.requirement.user + " the capacity ";
-            this.require +=
+            this.msg +=
               " " +
               this.requirement.processVerb +
               " " +
               this.requirement.object;
           } else if(this.requirement.systemActivity == "extInt"){
-            this.require +=
+            this.msg +=
               " have the capacity of " +
               this.requirement.processVerb +
               " " +
@@ -292,10 +291,10 @@ export default {
           }
 
           //Validat conditions
-          if (this.requirement.systemConditionDescriptionState) {
-            this.require += ", " + this.requirement.systemConditionDescription;
+          if (this.requirement.systemCondition) {
+            this.msg += ", " + this.requirement.systemConditionDescription;
           }
-          //this.$Message.success(this.require);
+          //this.$Message.success(this.msg);
           this.dialog = true;
         } else {
           this.$Message.error("Fail!");

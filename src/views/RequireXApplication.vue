@@ -251,13 +251,13 @@ export default {
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$Message.success("Success!");
+          //this.$Message.success("Success!");
           //Si hay una condición
           if (this.requirement.condition) {
             this.msg += this.requirement.conditionDescription + " ";
           }
 
-          this.msg =
+          this.msg +=
             "The " +
             this.requirement.systemName +
             " " +
@@ -291,7 +291,7 @@ export default {
           }
 
           //Validat conditions
-          if (this.requirement.systemConditionDescriptionState) {
+          if (this.requirement.systemCondition) {
             this.msg += ", " + this.requirement.systemConditionDescription;
           }
           //this.$Message.success(this.require);
