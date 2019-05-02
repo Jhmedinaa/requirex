@@ -143,7 +143,9 @@
   "requirex_requirement_from1": "From",  
   "requirex_requirement_from2": "To",   
   "requirex_requirement_from_value_1": "from",  
-  "requirex_requirement_from_value_2": "to"
+  "requirex_requirement_from_value_2": "to",
+
+  "requirex_generate_pdf":"Generate Pdf"
   
 
   

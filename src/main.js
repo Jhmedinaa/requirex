@@ -17,10 +17,13 @@ import store from './store'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
+import jspdf from 'jspdf/dist/jspdf.min.js';
+
 Vue.config.productionTip = false
 Vue.use(iView)
 Vue.use(VueI18n)
 Vue.use(BootstrapVue)
+Vue.use(jspdf)
 Vue.config.productionTip = false
 
 new Vue({

@@ -143,14 +143,20 @@
         <i-button style="margin-left: 8px" @click="handleReset('requirement')">Cancel</i-button>
       </form-item>
     </i-form>
+
     <!-- Modal del mensaje-->
     <modal v-model="dialog" title="RequireX" @on-ok="ok" ok-text="ok">
-      <h1 slot="header" >
+      <h1 slot="header">
         <span>{{$t("app_requirex")}} - {{$t('requirex_application')}}</span>
       </h1>
       <p>{{msg}}</p>
       <div slot="footer">
-        <Button type="info" size="small"  @click="ok">{{$t("modal_ok")}}</Button>
+        <!-- Boton ok -->
+        <Button type="info" size="small" @click="ok">{{$t("modal_ok")}}</Button>
+        <!-- Boton Genrar Pdf-->
+        <Button size="small" @click="pdf">{{$t("requirex_generate_pdf") }}</Button>
+
+     
       </div>
     </modal>
   </div>
@@ -159,6 +165,8 @@
 <script src="//unpkg.com/vue/dist/vue.js"></script>
 <script src="//unpkg.com/iview/dist/iview.min.js"></script>
 <script>
+import jsPDF from "jspdf";
+
 export default {
   data() {
     return {
@@ -223,7 +231,8 @@ export default {
       userInt: false,
       autoAct: false,
       extInt: false,
-      dialog: false
+      dialog: false,
+      jsonFile: ""
     };
   },
   methods: {
@@ -253,7 +262,7 @@ export default {
       this.$refs[name].validate(valid => {
         if (valid) {
           //Reiniciar requerimiento
-           this.msg = "";
+          this.msg = "";
           //this.$Message.success("Success!");
           //Si hay una condición
           if (this.requirement.condition) {
@@ -298,6 +307,8 @@ export default {
             this.msg += ", " + this.requirement.systemConditionDescription;
           }
           //this.$Message.success(this.require);
+          this.jsonFile =
+            "text/json;charset=utf-8," + encodeURIComponent(this.requirement);
           this.dialog = true;
         } else {
           this.$Message.error("Fail!");
@@ -312,6 +323,13 @@ export default {
       this.dialog = false;
       // this.$Message.info("Clicked ok");
     },
+    pdf() {
+      var doc = new jsPDF();
+
+      doc.text(this.msg, 10, 10);
+      doc.save("requirement.pdf");
+    },
+    json() {},
     cancel() {
       // this.$Message.info("Clicked cancel");
     }
